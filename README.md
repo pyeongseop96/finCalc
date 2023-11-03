@@ -1,6 +1,6 @@
 # finCalc
-finance calculator(금융계산기)
-개발 기간: 23-10-31 ~ 23-11-03
+finance calculator(금융계산기)  
+개발 기간: 23-10-31 ~ 23-11-03  
 링크: https://ssafyps.github.io/finCalcTest
 
 ## 결과
