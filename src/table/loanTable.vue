@@ -66,9 +66,9 @@
         resultLoanAmount.value = loanAmount.value;
         resultLoanTerm.value = loanTerm.value;
         resultInterestRate.value = interestRate.value;
-        if(resultLoanAmount.value*1==NaN || resultLoanAmount.value*1<0 || Number.isInteger(resultLoanAmount.value*1)==false 
-        || resultLoanTerm.value*1==NaN || resultLoanTerm.value*1<0 || Number.isInteger(resultLoanTerm.value*1)==false
-        || resultInterestRate.value*1 ==NaN || resultInterestRate.value*1<0){
+        if( isNaN(resultLoanAmount.value*1) || resultLoanAmount.value*1<=0 || Number.isInteger(resultLoanAmount.value*1)==false 
+        || isNaN(resultLoanTerm.value*1) || resultLoanTerm.value*1<=0 || Number.isInteger(resultLoanTerm.value*1)==false
+        || isNaN(resultInterestRate.value*1) || resultInterestRate.value*1<=0){
             isError.value = true;
             isCalc.value = false;
         }

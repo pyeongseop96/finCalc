@@ -48,9 +48,9 @@
         resultMonthDeposit.value = monthDeposit.value;
         resultGoal.value = goal.value;
         resultSavingInterest.value = savingInterest.value;
-        if(resultMonthDeposit.value*1==NaN || resultMonthDeposit.value*1<0 || Number.isInteger(resultMonthDeposit.value*1)==false 
-        || resultGoal.value*1==NaN || resultGoal.value*1<0 || Number.isInteger(resultGoal.value*1)==false
-        || resultSavingInterest.value*1 ==NaN || resultSavingInterest.value*1<0){
+        if(isNaN(resultMonthDeposit.value*1) || resultMonthDeposit.value*1<=0 || Number.isInteger(resultMonthDeposit.value*1)==false 
+        || isNaN(resultGoal.value*1) || resultGoal.value*1<=0 || Number.isInteger(resultGoal.value*1)==false
+        || isNaN(resultSavingInterest.value*1) || resultSavingInterest.value*1<=0){
             isError.value = true;
             isCalc.value = false;
         }

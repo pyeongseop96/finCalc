@@ -48,16 +48,15 @@
     const isError = ref(false);
     const result = ref(0);
     const depositCalc = function() {
-        if(depositCost.value*1==NaN || depositCost.value*1<0 || Number.isInteger(depositCost.value*1)==false 
-        || depositPeriod.value*1==NaN || depositPeriod.value*1<0 || Number.isInteger(depositPeriod.value*1)==false
-        || depositInterest.value*1 ==NaN || depositInterest.value*1<0){
+        if( isNaN(depositCost.value*1) || depositCost.value*1<=0 || Number.isInteger(depositCost.value*1)==false 
+        || isNaN(depositPeriod.value*1) || depositPeriod.value*1<=0 || Number.isInteger(depositPeriod.value*1)==false
+        || isNaN(depositInterest.value*1) || depositInterest.value*1<=0){
             isError.value = true;
             isCalc.value = false;
         }
         else if(method.value=='single'){
             result.value = depositCost.value*1 +
             (depositCost.value * depositPeriod.value * depositInterest.value / 1200 * 0.846);
-            console.log(depositCost.value * depositPeriod.value);
             isCalc.value = true;
             isError.value = false;
         }
